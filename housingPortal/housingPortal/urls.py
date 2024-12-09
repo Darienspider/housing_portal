@@ -21,6 +21,7 @@ from members import urls
 from workPortal import urls
 from communityEvents import urls
 from subscriptions import urls
+from .views import * 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('members/', include('members.urls'), name ='members'),  # Include members app URLs
@@ -28,4 +29,10 @@ urlpatterns = [
     path('workers/', include('workers.urls'), name='workers'),  # Include workers app URLs
     path('workPortal/', include('workPortal.urls'),name='workPortal'),  # Include workPortal app URLs
     path('communityEvents/', include('communityEvents.urls'), name='communityEvents'),  # Include communityEvents app URLs
+    path('communityEvents/', include('communityEvents.urls'), name='communityEvents'),  # Include communityEvents app URLs
+    path('communityEvents/', include('communityEvents.urls'), name='communityEvents'),  # Include communityEvents app URLs
+    path('',view=home, name='home'),
+    path('register/',view=register, name='home')
+
+
 ]

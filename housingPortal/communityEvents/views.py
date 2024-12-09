@@ -6,3 +6,4 @@ def home(request):
         'title': 'Events Homepage',
     }
     return render(request,'communityEvents/home.html', context = content)
+
