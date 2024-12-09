@@ -5,13 +5,19 @@ from datetime import timedelta
 # Create your models here.
 
 class SubscriptionPlan(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.PositiveIntegerField(help_text="Duration in days")  # e.g., 30 for monthly
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name = "Subscription Plan"  # Singular form
+        verbose_name_plural = "Subscription Plans"  # Plural form
+    
+
     def __str__(self):
         return self.name
 
@@ -28,3 +34,4 @@ class Subscription(models.Model):
 
     def is_active(self):
         return self.end_date > now()
+    

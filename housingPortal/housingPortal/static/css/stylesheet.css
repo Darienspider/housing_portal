@@ -1,0 +1,29 @@
+.pagePanel {
+    display:flex;
+    height: 100vh;
+    width:100%;
+}
+.content {
+    width: 100%;
+    height: 85vh;
+    display:grid;
+    margin-left: 10px;
+}
+.footerSection{
+    width: 100%;
+    height: 15vh;
+    display:flex;
+    margin: 0 auto;
+}
+.navigation{
+    width: 100px;
+    height: 400px;
+    display:flex;
+}
+.p-3 {
+    padding: 1rem !important;
+    height: 100%;
+}
+.viewPanel{
+    width: 100%;
+}

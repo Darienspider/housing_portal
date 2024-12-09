@@ -5,19 +5,19 @@ import members.models
 
 # Create your models here.
 class Ticket(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     address = models.ForeignKey(members.models.CommunityAddresses, on_delete=models.CASCADE)
 
     title = models.TextField(max_length=1024)
     description = models.TextField(max_length=1024)
     roomOptions = [
-        ('Bedroom','bedroom'),
-        ('Bathroom','bathroom'),
-        ('Living Room','living room'),
-        ('Kitchen','kitchen'),
-        ('Laundry Room','laundry room'),
-        ('Garage','garage'),
-        ('Yard', 'yard'),
+        ('bedroom','Bedroom'),
+        ('bathroom','Bathroom'),
+        ('living room','Living Room'),
+        ('kitchen','Kitchen'),
+        ('laundry room','Laundry Room'),
+        ('garage','Garage'),
+        ('yard','Yard'),
 
     ]
 
