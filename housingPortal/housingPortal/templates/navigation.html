@@ -4,39 +4,65 @@
       <span class="fs-4">Navigation</span>
     </a>
     <hr>
+    <p> {{ appname }}</p>
+    <p> {{ selected }}</p>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="{% url 'home' %}" class="nav-link active" aria-current="page">
+        {% if selected == 'home' %}
+        <a href="{% url 'home' %}" class="nav-link text-white active" aria-current="page">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
           Home
         </a>
+        {% else %}
+        <a href="{% url 'home' %}" class="nav-link text-white" aria-current="page">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          Home
+        </a>
+        {% endif %}
       </li>
       <li>
+        {% if selected == 'members' %}
         <!-- <a href="#" class="nav-link text-white"> -->
-        <a href="/members" class="nav-link text-white">
-
+        <a href="/members" class="nav-link text-white active">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
           Members
         </a>
+        {% else %}
+        <a href="/members" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          Members
+        </a>
+        {% endif %}
       </li>
       <li>
+        {% if selected == 'subscriptions' %}
+        <a href="/subscriptions" class="nav-link text-white active">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+          Subscriptions
+        </a>
+        {% else %}
         <a href="/subscriptions" class="nav-link text-white">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
           Subscriptions
         </a>
+        {% endif %}
+
       </li>
       <li>
-        <a href="/workers" class="nav-link text-white">
+        {% if selected == 'workers' %}
+        <a href="/workers" class="nav-link text-white active  ">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
           Workers
         </a>
-      </li>
-      <li>
-        <a href="/workPortal" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          WorkPortal
+        {% else %}
+        <a href="/workers" class="nav-link text-white ">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+          Workers
         </a>
+        {% endif %}
+
       </li>
+
     </ul>
     <hr>
     {% if authenticated %}

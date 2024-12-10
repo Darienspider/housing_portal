@@ -8,6 +8,8 @@ def home(request):
         'title': 'Homepage',
         'authenticated': request.user.is_authenticated,
         'user': request.user,
+        'selected': request.resolver_match.view_name,
+        'appname': request.resolver_match.view_name,
 
     }
     return render(request,'home.html', context = content)

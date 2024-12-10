@@ -32,7 +32,7 @@ urlpatterns = [
     path('communityEvents/', include('communityEvents.urls'), name='communityEvents'),  # Include communityEvents app URLs
     path('communityEvents/', include('communityEvents.urls'), name='communityEvents'),  # Include communityEvents app URLs
     path('',view=home, name='home'),
-    path('register/',view=register, name='home')
+    path('register/',view=register, name='register')
 
 
 ]
