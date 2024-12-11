@@ -22,6 +22,8 @@ from workPortal import urls
 from communityEvents import urls
 from subscriptions import urls
 from .views import * 
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('members/', include('members.urls'), name ='members'),  # Include members app URLs
@@ -35,4 +37,4 @@ urlpatterns = [
     path('register/',view=register, name='register')
 
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

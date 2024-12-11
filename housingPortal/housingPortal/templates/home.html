@@ -1,6 +1,13 @@
 {% extends 'main.html'%}
 {% block content %}
 
-<p> Welcome to homepage </p>
+<div style="background-color: black; height: 200px; ">
+    <img src="{{ community.logo.url }}" alt="Community Logo">
+</div>
+<p> {{community.description}} </p>
+<img src="{{ community.district_map.url }}"  alt="Map" style="height: 400px;"> 
+
+<!-- <img src="housingPortal{{ community.logo.url }}" alt ="Community Logo">  -->
+
 
 {% endblock %}

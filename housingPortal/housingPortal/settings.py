@@ -131,3 +131,13 @@ STATICFILES_DIRS = [BASE_DIR / 'housingPortal' / 'static']
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# MEDIA / IMAGE FILES CONFIGURATION
+try:
+    MEDIA_ROOT =  os.path.join(BASE_DIR, 'housingPortal','media')
+    MEDIA_URL = '/media/'
+except:
+    os.makedirs('media')
+    MEDIA_ROOT =  os.path.join(BASE_DIR,'housingPortal', 'media')
+    MEDIA_URL = '/media/'

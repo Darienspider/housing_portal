@@ -5,7 +5,8 @@ from .models import *
 # Register your models here.
 integratedModels = [
     CommunityAddresses,
-    Member
+    Member,
+    Community,
 ]
 for i in integratedModels:
     admin.site.register(i)
